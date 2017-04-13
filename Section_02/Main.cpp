@@ -4,12 +4,16 @@
 
 using namespace std;
 
-
+bool AskToPlayAgain();
 
 int main(int argc, const char * argv[]) {
-	PrintIntro();
-	GameLoop();
-
+	
+	bool playAgain = true;
+	while (playAgain == true) {
+		PrintIntro();
+		GameLoop();
+		playAgain = AskToPlayAgain();
+	}
 	return 0;
 }
 
@@ -46,4 +50,23 @@ int CheckAnswer(string guess) {
 		cout << "You guessed wrong, try again" << endl;
 		return 0;
 	}
+}
+
+bool AskToPlayAgain()
+{
+	bool playagain;
+	string playAnswer = "";
+	cout << "Do you want to play again, y/n?" << endl;
+	getline(cin, playAnswer);
+	
+	if (playAnswer == "y") {
+		return playagain = true;
+	}
+	else if(playAnswer =="n") {
+		return playagain = false;
+	}
+	else {
+		return playagain = false;
+	}
+	
 }

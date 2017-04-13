@@ -5,6 +5,8 @@
 
 using namespace std;
 
+int main(int argc, const char * argv[]);
+
 void GameLoop();
 void PrintIntro();
 string GetGuess();
