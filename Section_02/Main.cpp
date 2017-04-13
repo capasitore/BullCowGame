@@ -1,23 +1,26 @@
 #include <iostream>
 #include <string>
+#include "Main.h"
 
 using namespace std;
 
 
-void PrintIntro();
-string GetGuess();
-int CheckAnswer(string guess);
 
 int main(int argc, const char * argv[]) {
 	PrintIntro();
+	GameLoop();
+
+	return 0;
+}
+
+void GameLoop()
+{
 	int gameOver = 0;
 
 	while (gameOver != 1) {
 		string guess = GetGuess();
 		gameOver = CheckAnswer(guess);
 	}
-
-	return 0;
 }
 
 void PrintIntro() {
